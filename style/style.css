@@ -1,0 +1,71 @@
+@import url(global.css);
+@import url(listas.css);
+@import url(btn-agendamento.css);
+
+*{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: var(--background-tertiary);
+}
+
+.link{
+    text-decoration: none;   
+    font-size: 24px;
+    width: 150px;
+    height: 40px;
+    background-color: var(--content-tertiaryv);
+    padding: 20px;
+    border-radius: 0px 0px 12px;
+}   
+
+.content { 
+    width: 870px;
+    margin: 60px auto;
+    padding: 20px;
+    color: var(--content-primary);
+    background-color: var(--background-secondary);
+    border-radius: 8px;
+    position: relative;
+}
+.content-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px; /* Espaço entre o header e o texto */
+}
+.content-header h1 {
+    font-size: 24px;
+    color: var(--content-primary);
+    margin: 0;
+}
+
+.content-header .content-date input[type="date"] {
+    padding: 8px;
+    border: 1px solid var(--content-primary);
+    border-radius: 5px;
+    background-color: var(--background-secondary);
+    color: var(--content-primary);
+    font-size: 14px;
+    cursor: pointer;
+    display: inline-block;
+}
+.content p {
+    font-size: 16px;
+    color: var(--content-secondary);
+    margin-top: 10px;
+}
+
+.content button {
+    background-color: transparent;
+    border: 1px solid transparent;
+    color: #FFF;
+    cursor: pointer;
+
+    &:hover {
+        color: var(--content-brand);
+    }
+}
