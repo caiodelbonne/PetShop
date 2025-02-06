@@ -30,7 +30,7 @@
         <header>
             <img src="./assets/icon/manha.svg" alt="manha">
             <strong>Manha</strong>
-            <samp>09h-12h</samp>
+            <samp>07h-12h</samp>
         </header>
         <!-- lista de agendamento periodo de manha -->
         <ul>
@@ -83,6 +83,46 @@
 <div class="btn-agendamento ">
     <button>Novo agendamento</button>
 </div>
+
+ <!-- modal de agendamento -->
+
+    <div class="modal" id="modal-agendamento">
+        <div class="modal-content">
+            <button class="close-modal" id="close-modal">X</button>
+            <h2>Agende um atendimento</h2>
+            <p>Preencha os dados do cliente para realizar o agendamento:</p>
+            <form action="#" method="POST" id="form-agendamento">
+                <label for="dono-dog">Nome do tutor</label>
+                <input type="text">
+
+                <label for="dog-nome">Nome do pet</label>
+                <input type="text" name="dog-nome" id="dog-nome">
+
+                <label for="telefone">Telefone</label>
+                <input type="tel" name="telefone" id="telefone" placeholder="(00)000000000">
+
+                <label for="servico">Serviço:</label>
+                <select id="servico" name="servico" required>
+                    <option selected>Selecione</option>
+                    <option value="vacina">Vacina</option>
+                    <option value="banho_tosa">Banho e Tosa</option>
+                    <option value="consulta">Consulta</option>
+                </select>
+                <label for="observacao">Observação:</label>
+                <textarea id="observacao" name="observacao" rows="4"></textarea>
+                
+                <!-- horario do agendamento -->
+                <label for="data">Data:</label>
+                <input type="date" id="data" name="data" required>
+                
+                <label for="hora">Horário:</label>
+                <input type="time" id="hora" name="hora" required>
+
+
+                <button type="submit">Agendar</button>
+            </form>
+        </div>  
+    </div>
 
 </body>
 
