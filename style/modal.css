@@ -11,7 +11,9 @@
     background-color: rgba(0, 0, 0, 0.4); 
     padding-top: 60px;
 }
-
+.modal-aberto {
+    display: block; /* Torna o modal visível */
+}
 .modal-content {
     background-color: #1f1f2e;
     margin: 5% auto;
