@@ -3,7 +3,7 @@ import { novoAgendamento } from "../services/novoAgendamento.js";
 const form = document.getElementById("form-agendamento");
 
 form.addEventListener("submit", async function (event) {
-    event.preventDefault(); // Evita que a página seja recarregada
+    event.preventDefault();
 
     // Captura os valores preenchidos no formulário
     const nome = document.getElementById("dono-dog").value;
