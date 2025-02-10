@@ -5,3 +5,29 @@ ul li {
     font-size: 16px;  
     border-bottom: 1px solid var(--content-secondary);
 }
+
+.agendamento-container {
+    display: flex;
+    align-items: center; /* Alinha os itens verticalmente no centro */
+    justify-content: flex-start; /* Alinha à esquerda */
+    text-transform: capitalize;
+
+}
+
+.agendamento-container strong,
+.agendamento-container span,
+.agendamento-container p {
+    margin-right: 10px; /* Adiciona um espaçamento entre os elementos */
+}
+
+
+.pet-nome{
+    color: var(--accent-yellow);
+    text-transform: uppercase;
+
+}
+
+.pet-motivo{
+    color: var(--accent-orange);
+    text-transform: uppercase;
+}

@@ -23,53 +23,38 @@
         </div>
         <p>Aqui você pode ver todos os clientes e serviços agendados para hoje.</p>
     </aside>
-    
+
     <!-- Agendamentos -->
-    <section class="content">
+    <section class="content" id="manha">
         <header>
             <img src="./assets/icon/manha.svg" alt="Manhã">
             <strong>Manhã</strong>
             <samp>07h-12h</samp>
         </header>
-        <ul>
-            <li>
-                <strong>10:00</strong>
-                <strong>Amora / Caio Cesar</strong>
-                <span>Vacina</span>
-                <button type="button">Remover agendamento</button>
-            </li>
+        <ul> <!-- recebi via api -->
         </ul>
     </section>
 
-    <section class="content">
+    <section class="content" id="tarde">
         <header>
             <img src="./assets/icon/tarde.svg" alt="Tarde">
             <strong>Tarde</strong>
             <samp>12:30h-18h</samp>
         </header>
         <ul>
-            <li>
-                <strong>15:00</strong>
-                <strong>Jhade / Caio Cesar</strong>
-                <span>Banho e Tosa</span>
-                <button type="button">Remover agendamento</button>
-            </li>
+            <!-- recebi via api -->
         </ul>
     </section>
 
-    <section class="content">
+    <section class="content" id="noite">
         <header>
             <img src="./assets/icon/noite.svg" alt="Noite">
             <strong>Noite</strong>
             <samp>18:00h-23h</samp>
         </header>
         <ul>
-            <li>
-                <strong>21:00</strong>
-                <strong>Ohanna / Del Bonne</strong>
-                <span>Consulta</span>
-                <button type="button">Remover agendamento</button>
-            </li>
+            <!-- recebi via api -->
+
         </ul>
     </section>
 
@@ -106,13 +91,13 @@
 
                 <label for="data">Data:</label>
                 <input type="date" id="data" name="data" required>
-                
+
                 <label for="hora">Horário:</label>
                 <input type="time" id="hora" name="hora" required>
 
                 <button type="submit">Agendar</button>
             </form>
-        </div>  
+        </div>
     </div>
 
     <script type="module" src="src/script.js"></script>
