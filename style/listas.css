@@ -11,7 +11,6 @@ ul li {
     align-items: center; /* Alinha os itens verticalmente no centro */
     justify-content: flex-start; /* Alinha à esquerda */
     text-transform: capitalize;
-
 }
 
 .agendamento-container strong,
@@ -30,4 +29,15 @@ ul li {
 .pet-motivo{
     color: var(--accent-orange);
     text-transform: uppercase;
+}
+
+.obs-pet{
+    color: red;
+    font-weight: bold;
+}
+
+.line{
+    border-bottom: 2px solid var(--content-secondary);
+    padding-bottom: 10px;
+    border-radius: 2px;
 }
