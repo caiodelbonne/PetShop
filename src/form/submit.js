@@ -1,4 +1,5 @@
 import { novoAgendamento } from "../services/novoAgendamento.js";
+import { removerAgendamento } from "../services/removerAgendamento.js";
 
 const form = document.getElementById("form-agendamento");
 
@@ -14,7 +15,7 @@ form.addEventListener("submit", async function (event) {
   const data = document.getElementById("data").value;
   const hora = document.getElementById("hora").value;
 
-  // verifica se tudo que e obrigatorio foi preenchido
+  // Verifica se tudo que é obrigatório foi preenchido
   if (!nome || !pet || !telefone || !servico || !data || !hora) {
     alert("Por favor, preencha todos os campos obrigatórios.");
     return;
@@ -61,7 +62,14 @@ form.addEventListener("submit", async function (event) {
     document.querySelector(".modal").classList.remove("modal-aberto");
 
     // Adicionar o agendamento à interface do usuário
-    adicionarAgendamento(nome, pet, horaFormatada, servico, observacao);
+    adicionarAgendamento(
+      agendamento.id,
+      nome,
+      pet,
+      horaFormatada,
+      servico,
+      observacao
+    );
   } else {
     alert("Ocorreu um erro ao tentar agendar. Por favor, tente novamente.");
   }
@@ -81,6 +89,7 @@ function formatarHora(hora) {
 
 // Função para adicionar agendamento na interface
 function adicionarAgendamento(
+  id,
   nomeUsuario,
   nomePet,
   hora,
@@ -102,17 +111,18 @@ function adicionarAgendamento(
   // Cria um novo li para o agendamento
   const li = document.createElement("li");
   li.classList.add("agendamento-container");
+  li.setAttribute("data-id", id); // Atribui o ID do agendamento
 
   li.innerHTML = `
-      <strong>${hora}</strong> 
-      <strong>Pet: <span class="pet-nome">${nomePet}</span>  Tutor: ${nomeUsuario} </strong> 
-      <span>Motivo: <span class="pet-motivo">${descricao}</span> </span>
-      ${
-        observacao
-          ? `<p><strong>Observação:</strong> <span class="obs-pet">${observacao}</span> </p>`
-          : ""
-      }
-      <button type="button" class="remover-agendamento">Remover agendamento</button>
+    <strong>${hora}</strong> 
+    <strong>Pet: <span class="pet-nome">${nomePet}</span>  Tutor: ${nomeUsuario} </strong> 
+    <span>Motivo: <span class="pet-motivo">${descricao}</span> </span>
+    ${
+      observacao
+        ? `<p><strong>Observação:</strong> <span class="obs-pet">${observacao}</span> </p>`
+        : ""
+    }
+    <button type="button" class="remover-agendamento">Remover agendamento</button>
   `;
 
   // Adiciona o novo agendamento na lista correta
@@ -121,8 +131,15 @@ function adicionarAgendamento(
 
   // Adicionar funcionalidade para remover o agendamento
   const botaoRemover = li.querySelector(".remover-agendamento");
-  botaoRemover.addEventListener("click", () => {
-    li.remove();
+  botaoRemover.addEventListener("click", async () => {
+    const sucesso = await removerAgendamento(id);
+    if (sucesso) {
+      li.remove();
+    } else {
+      alert(
+        "Ocorreu um erro ao tentar remover o agendamento. Por favor, tente novamente."
+      );
+    }
   });
 }
 
@@ -147,6 +164,7 @@ async function carregarAgendamentos() {
     agendamentos.forEach((agendamento) => {
       const [dataAgendamento, horaAgendamento] = agendamento.data.split(" ");
       adicionarAgendamento(
+        agendamento.id,
         agendamento.nome,
         agendamento.pet,
         horaAgendamento,
