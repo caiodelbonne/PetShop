@@ -60,3 +60,11 @@ button {
 button:hover {
     background-color: #5b2cc1;
 }
+
+
+@media (max-width: 480px) {
+    .modal-content {
+        width: 95%;
+        padding: 15px;
+    }
+}

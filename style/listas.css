@@ -41,3 +41,10 @@ ul li {
     padding-bottom: 10px;
     border-radius: 2px;
 }
+
+@media (max-width: 768px) {
+    .agendamento-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}

@@ -71,3 +71,17 @@ body {
     color: var(--content-brand);
   }
 }
+
+
+@media (max-width: 768px) {
+  .content {
+      width: 95%;
+  }
+}
+
+@media (max-width: 480px) {
+  .content {
+      width: 100%;
+      padding: 10px;
+  }
+}

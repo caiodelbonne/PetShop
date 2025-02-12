@@ -11,3 +11,16 @@
     right: 0;
     position: absolute;
 }
+
+
+@media (max-width: 768px) {
+    .btn-agendamento button {
+        width: 180px;
+    }
+}
+
+@media (max-width: 480px) {
+    .btn-agendamento button {
+        width: 150px;
+    }
+}
