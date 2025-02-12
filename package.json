@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "server": "json-server --watch server.json --port 3334"
+    "server": "json-server --watch server.json --port 3335"
   },
   "dependencies": {
     "json-server": "^1.0.0-beta.3"
